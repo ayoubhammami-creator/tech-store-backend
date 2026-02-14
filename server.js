@@ -8,7 +8,11 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://tech-store-bsktt-9l32jopuz-ayoubs-projects-2614b054.vercel.app",
+  credentials: true,
+}));
+
 app.use(express.json());
 
 app.use("/api/auth", require("./routes/authRoutes"));
